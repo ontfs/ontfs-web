@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147px" height="148px" viewBox="0 0 147 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(1.000000, 1.000000)">
+            <rect id="矩形" stroke="#FAFAFA" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="145" height="146" rx="30"></rect>
+            <g id="编组" transform="translate(32.750000, 33.000000)" stroke="#000000" stroke-width="6">
+                <polyline id="Stroke-1" points="79.2185495 79.6512527 0.0484395604 0.481142857 0.0484395604 40.0661978"></polyline>
+                <path d="M0.0483514984,40.0603077 C0.0474725275,50.1930549 3.91208791,60.3258022 11.6421978,68.0567912 C27.1015385,83.5161319 52.1652747,83.5161319 67.6246154,68.0567912 L11.6421978,12.0752527" id="Stroke-3"></path>
+                <polyline id="Stroke-5" points="0.0483516484 0.481054945 79.2184615 79.6511648 79.2184615 40.0661099"></polyline>
+                <path d="M79.2185495,40.0659341 C79.2185495,29.9358242 75.3539341,19.8048352 67.6247033,12.0747253 C52.1653626,-3.38373626 27.1016264,-3.38373626 11.6422857,12.0747253 L67.6247033,68.0571429" id="Stroke-7"></path>
+            </g>
+        </g>
+    </g>
+</svg>
