@@ -48,8 +48,8 @@ export default {
     justify-content: center;
     align-items: center;
     .icons {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       background: url(./assets/images/loading.svg) no-repeat;
       background-size: contain;
       animation: spin ease-in-out 1.5s 10;

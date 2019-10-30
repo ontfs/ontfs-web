@@ -161,7 +161,7 @@ export default {
       display: none;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px #dfdfdf;
       // transition: all 1s;
       // opacity: 0;
       img {
