@@ -152,7 +152,7 @@ export default {
     }
     .qrcode {
       position: absolute;
-      left: -88%;
+      left: -92%;
       top: 130%;
       width: 140px;
       height: 140px;
