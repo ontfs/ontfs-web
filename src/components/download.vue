@@ -2,7 +2,7 @@
   <div id="browser" style="z-index: 1;    background-repeat: no-repeat;background-size: 100%;">
         <!-- <mobilenav-div v-if="!isPC"></mobilenav-div> -->
         <div :class="isWeiXin?'container home-detail zindex9': 'container home-detail zindex'" v-if="!isPC">
-<!--                         <div v-if="isWeiXin" class="weixin-wrapper">
+                        <div v-if="isWeiXin" class="weixin-wrapper">
                             <div id="weixin-notice">
                                 <span id="top"></span>
                                 <div style="display:flex">
@@ -13,7 +13,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     <!-- <div class="col-sm-12 " style="padding:0;"> -->
                         <div class="img-wrapper">
                             <img class="img-wrapper-logo img-logo" src="../assets/images/download/logo.svg"/>
@@ -71,13 +71,13 @@
                                     </div> 
                                 </a>
                             </div>
-                            <!-- <div class="now-download">
+                            <div class="now-download">
                                 <a class="no-underline" @click="downloadClick(apkurl,1,0)" >
                                     <div class="now-wrapper">
                                         <span class="font-now">{{download.android.apk}}</span>
                                     </div>  
                                 </a>
-                            </div> -->
+                            </div>
                         </div>
         </div>
         <div v-else>
@@ -456,7 +456,7 @@ body.hidden {
     padding:8px 0;
 }
 .now-wrapper{
-    padding:8px 0;
+    padding:13px 0;
 }
 .font-now{
     font-size:14px;
