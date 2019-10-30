@@ -21,7 +21,7 @@
       <div class="qrcode_box ml21" @mouseenter="flag && fadeIn()" @mouseleave="flag && fadeLeave()">
         <img class="s_code_img" src="../assets/images/qrcode.svg" alt />
         <div class="qrcode" ref="qrcode_l" id="qrcode_d">
-          <img src="../assets/images/qrcode.jpg" alt srcset />
+          <img src="../assets/images/qrcode2.png" alt srcset />
         </div>
       </div>
     </div>

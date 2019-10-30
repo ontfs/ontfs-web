@@ -48,11 +48,12 @@ export default {
     justify-content: center;
     align-items: center;
     .icons {
-      width: 120px;
-      height: 120px;
-      background: url(./assets/images/iconbg.svg) no-repeat;
+      width: 100px;
+      height: 100px;
+      background: url(./assets/images/loading.svg) no-repeat;
       background-size: contain;
-      animation: spin ease-in-out 1.5s;
+      animation: spin ease-in-out 1.5s 10;
+      transform-origin: center;
     }
   }
 }
