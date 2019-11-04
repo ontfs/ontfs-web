@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       flag: true,
-      appstoreUrl: 'https://apps.apple.com/hk/app/ontology-authenticator/id1483309693',
+      appstoreUrl: 'https://apps.apple.com/cn/app/ontology-authenticator/id1483309693',
       googleplayUrl: 'https://play.google.com/store/apps/details?id=com.github.ontio.ontoauth',
       andapkUrl: 'http://authenticator.ont.io/ontology_authenticator.apk',
       weixin: {
@@ -65,7 +65,7 @@ export default {
       $('#qrcode_d').stop(false, true).hide()
     },
     openNewPage(url) {
-      window.open(url, "_self")
+      window.open(url, "_blank")
     },
     openNewPageAp() {
       let width = document.documentElement.clientWidth
