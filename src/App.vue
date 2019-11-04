@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="less">
+html {
+  background: #fff;
+}
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
