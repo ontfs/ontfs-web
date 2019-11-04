@@ -6,22 +6,34 @@
     </div>
     <div class="sub_title">Self-sovereign Identity & Personal Claims Tool</div>
     <div class="download_box">
-      <div
-        :class="isPC ? 'media_btn hoveraction': 'media_btn'"
-        @click="openNewPage('https://apps.apple.com/hk/app/ontology-authenticator/id1483309693')"
-      >
+      <div :class="isPC ? 'media_btn hoveraction': 'media_btn'" @click="openNewPage(appstoreUrl)">
         <img src="../assets/images/apple.svg" alt />
       </div>
-      <div :class="isPC ? 'media_btn ml21 hoveraction': 'media_btn ml21'" @click="openNewPage()">
+      <div
+        :class="isPC ? 'media_btn ml21 hoveraction': 'media_btn ml21'"
+        @click="openNewPage(googleplayUrl)"
+      >
         <img src="../assets/images/google.svg" alt />
       </div>
-      <div class="media_btn apkbtn" @click="openNewPage()">
+      <div class="media_btn apkbtn" @click="openNewPageAd()">
         <img src="../assets/images/apkbtn.svg" alt />
       </div>
       <div class="qrcode_box ml21" @mouseenter="flag && fadeIn()" @mouseleave="flag && fadeLeave()">
         <img class="s_code_img" src="../assets/images/qrcode.svg" alt />
         <div class="qrcode" ref="qrcode_l" id="qrcode_d">
           <img src="../assets/images/qrcode2.png" alt srcset />
+        </div>
+      </div>
+    </div>
+    <div v-if="isWeiXinShow" class="weixin-wrapper">
+      <div id="weixin-notice">
+        <span id="top"></span>
+        <div style="display:flex">
+          <img class="weixin-img" src="../assets/images/download/open.svg" />
+          <div class="weixin-text-wrapper">
+            <div class="weixin-text">{{weixin.youshangjiao}}</div>
+            <div class="weixin-text">{{weixin.openinexplorer}}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,7 +46,15 @@ export default {
   name: 'home',
   data() {
     return {
-      flag: true
+      flag: true,
+      appstoreUrl: 'https://apps.apple.com/hk/app/ontology-authenticator/id1483309693',
+      googleplayUrl: 'https://play.google.com/store/apps/details?id=com.github.ontio.ontoauth',
+      andapkUrl: 'http://authenticator.ont.io/ontology_authenticator.apk',
+      weixin: {
+        youshangjiao: "Click here",
+        openinexplorer: "Open from browser"
+      },
+      isWeiXinShow: false
     }
   },
   methods: {
@@ -45,7 +65,7 @@ export default {
       $('#qrcode_d').stop(false, true).hide()
     },
     openNewPage(url) {
-      window.open(url)
+      window.open(url, "_self")
     },
     openNewPageAp() {
       let width = document.documentElement.clientWidth
@@ -56,12 +76,18 @@ export default {
       }
     },
     openNewPageAd() {
-      let width = document.documentElement.clientWidth
-      if (width < 640) {
-        this.$router.push({ name: 'Download' })
+      if (this.isWeiXin) {
+        this.isWeiXinShow = true
       } else {
-        this.openNewPage('https://onto.app/android/ONTO.apk')
+        this.openNewPage(this.andapkUrl)
       }
+      // this.$router.push({ name: 'Download' })
+      // let width = document.documentElement.clientWidth
+      // if (width < 640) {
+      //   this.$router.push({ name: 'Download' })
+      // } else {
+      //   this.openNewPage('https://onto.app/android/ONTO.apk')
+      // }
     }
   },
   computed: {
@@ -71,12 +97,28 @@ export default {
       } else {
         return true
       }
+    },
+    isWeiXin: function () {
+      var ua = navigator.userAgent.toLowerCase();
+      var isWeixin = ua.indexOf('micromessenger') != -1;
+      if (isWeixin) {
+        // document.body.style.overflow = "hidden";
+        document.body.classList.add('hidden')
+        return true;
+      } else {
+        // document.body.style.overflow = "auto";
+        document.body.classList.remove('hidden')
+        return false;
+      }
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+body.hidden {
+  overflow: hidden;
+}
 .home {
   height: 100vh;
   display: flex;

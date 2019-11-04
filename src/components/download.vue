@@ -184,13 +184,6 @@
         },
         downloadClick:function($url,$os_type,$download_source){
             window.open($url, "_self")
-            console.log("download",$url)
-            console.log("download",$os_type)
-            console.log("download",$download_source)
-            let code = this.$route.params.code
-            if(this.$route.params.code){   
-                this.saveData($os_type,$download_source)
-            }
         },
         saveData:function($saveos_type,$savedownload_source){
             console.log("save",$saveos_type)
@@ -215,10 +208,10 @@
       return {
           lang:'en',
           download:{},
-          appstoreurl:"https://itunes.apple.com/cn/app/onto-an-ontology-dapp/id1436009823?mt=8",
+          appstoreurl:"https://apps.apple.com/hk/app/ontology-authenticator/id1483309693",
           iosplist:"itms-services://?action=download-manifest&url=https://onto.app/mainfest.plist",
-          googleplayurl:"https://play.google.com/store/apps/details?id=com.github.ontio.onto",
-          apkurl:"https://onto.app/android/ONTO.apk",
+          googleplayurl:"https://play.google.com/store/apps/details?id=com.github.ontio.ontoauth",
+          apkurl:"http://authenticator.ont.io/ontology_authenticator.apk",
           cn:{
               weixin:{
                   youshangjiao:"点击右上角",
@@ -468,9 +461,11 @@ body.hidden {
 .weixin-wrapper{
     position: fixed;
     width: 100%;
-    height:100%;
+    height:2000px;
     z-index:100000;
     background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
 }
 #top {  
    
@@ -491,8 +486,8 @@ body.hidden {
     width:230px;
     height: 80px;
     background: #fff;
-    right:25px;
-    top:25px;
+    right:10px;
+    top:29px;
 }  
 .weixin-img{
     width:40px;
