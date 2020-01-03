@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <div class="loading" v-if="isshow">
+    <router-view />
+    <!-- <div class="loading" v-if="isshow">
       <div class="icons"></div>
     </div>
     <transition name="fade">
       <router-view v-if="!isshow" />
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -18,7 +19,11 @@ export default {
   },
   computed: {
     isPC() {
-      if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+      if (
+        navigator.userAgent.match(
+          /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+        )
+      ) {
         return false
       } else {
         return true
@@ -33,6 +38,28 @@ export default {
     } else {
       this.isshow = false
     }
+    ;(function(doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt =
+          'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+          var clientWidth = docEl.clientWidth > 750 ? 750 : docEl.clientWidth
+
+          if (!clientWidth) {
+            return
+          }
+
+          docEl.style.fontSize = 100 * (clientWidth / 750) + 'px'
+        }
+
+      recalc()
+
+      if (!doc.addEventListener) return
+
+      win.addEventListener(resizeEvt, recalc, false)
+
+      doc.addEventListener('DOMContentLoaded', recalc, false)
+    })(document, window)
   }
 }
 </script>
@@ -77,8 +104,7 @@ html {
     transform: rotate(360deg);
   }
 }
-.fade-enter-active
- {
+.fade-enter-active {
   transition: opacity 0.2s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {

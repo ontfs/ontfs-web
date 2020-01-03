@@ -1,42 +1,33 @@
 <template>
   <div class="home">
-    <div class="iconbox"></div>
-    <div class="logo_title">
-      <h1></h1>
+    <div class="iconbox">
+      <i></i>
     </div>
-    <div class="sub_title">Self-sovereign Identity & Personal Claims Tool</div>
+    <div class="pcLogo"></div>
+    <div class="logo_title">
+      <h1>Download Ontology Filing Service Client</h1>
+    </div>
     <div class="download_box">
-      <div :class="isPC ? 'media_btn hoveraction': 'media_btn'" @click="openNewPage(appstoreUrl)">
-        <img src="../assets/images/apple.svg" alt />
+      <div
+        :class="isPC ? 'media_btn hoveraction' : 'media_btn'"
+        @click="openNewPage(appstoreUrl)"
+      >
+        <img src="../assets/images/windows.svg" alt />
       </div>
       <div
-        :class="isPC ? 'media_btn ml21 hoveraction': 'media_btn ml21'"
+        :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
         @click="openNewPage(googleplayUrl)"
       >
-        <img src="../assets/images/google.svg" alt />
+        <img src="../assets/images/macicon.svg" alt />
       </div>
-      <div class="media_btn apkbtn" @click="openNewPageAd()">
-        <img src="../assets/images/apkbtn.svg" alt />
-      </div>
-      <div class="qrcode_box ml21" @mouseenter="flag && fadeIn()" @mouseleave="flag && fadeLeave()">
-        <img class="s_code_img" src="../assets/images/qrcode.svg" alt />
-        <div class="qrcode" ref="qrcode_l" id="qrcode_d">
-          <img src="../assets/images/qrcode2.png" alt srcset />
-        </div>
+      <div
+        :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
+        @click="openNewPage(googleplayUrl)"
+      >
+        <img src="../assets/images/linux.svg" alt />
       </div>
     </div>
-    <div v-if="isWeiXinShow" class="weixin-wrapper">
-      <div id="weixin-notice">
-        <span id="top"></span>
-        <div style="display:flex">
-          <img class="weixin-img" src="../assets/images/download/open.svg" />
-          <div class="weixin-text-wrapper">
-            <div class="weixin-text">{{weixin.youshangjiao}}</div>
-            <div class="weixin-text">{{weixin.openinexplorer}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="doc_link">Click here to see API Documenation</div>
   </div>
 </template>
 
@@ -47,32 +38,40 @@ export default {
   data() {
     return {
       flag: true,
-      appstoreUrl: 'https://apps.apple.com/cn/app/ontology-authenticator/id1483309693',
-      googleplayUrl: 'https://play.google.com/store/apps/details?id=com.github.ontio.ontoauth',
+      appstoreUrl:
+        'https://apps.apple.com/cn/app/ontology-authenticator/id1483309693',
+      googleplayUrl:
+        'https://play.google.com/store/apps/details?id=com.github.ontio.ontoauth',
       andapkUrl: 'http://authenticator.ont.io/ontology_authenticator.apk',
       weixin: {
-        youshangjiao: "Click here",
-        openinexplorer: "Open from browser"
+        youshangjiao: 'Click here',
+        openinexplorer: 'Open from browser'
       },
       isWeiXinShow: false
     }
   },
   methods: {
-    fadeIn: function () {
-      $('#qrcode_d').stop(false, true).fadeIn()
+    fadeIn: function() {
+      $('#qrcode_d')
+        .stop(false, true)
+        .fadeIn()
     },
-    fadeLeave: function () {
-      $('#qrcode_d').stop(false, true).hide()
+    fadeLeave: function() {
+      $('#qrcode_d')
+        .stop(false, true)
+        .hide()
     },
     openNewPage(url) {
-      window.open(url, "_blank")
+      window.open(url, '_blank')
     },
     openNewPageAp() {
       let width = document.documentElement.clientWidth
       if (width < 640) {
         this.$router.push({ name: 'Download' })
       } else {
-        this.openNewPage('https://apps.apple.com/us/app/onto-an-ontology-dapp/id1436009823')
+        this.openNewPage(
+          'https://apps.apple.com/us/app/onto-an-ontology-dapp/id1436009823'
+        )
       }
     },
     openNewPageAd() {
@@ -81,34 +80,31 @@ export default {
       } else {
         this.openNewPage(this.andapkUrl)
       }
-      // this.$router.push({ name: 'Download' })
-      // let width = document.documentElement.clientWidth
-      // if (width < 640) {
-      //   this.$router.push({ name: 'Download' })
-      // } else {
-      //   this.openNewPage('https://onto.app/android/ONTO.apk')
-      // }
     }
   },
   computed: {
     isPC() {
-      if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+      if (
+        navigator.userAgent.match(
+          /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+        )
+      ) {
         return false
       } else {
         return true
       }
     },
-    isWeiXin: function () {
-      var ua = navigator.userAgent.toLowerCase();
-      var isWeixin = ua.indexOf('micromessenger') != -1;
+    isWeiXin: function() {
+      var ua = navigator.userAgent.toLowerCase()
+      var isWeixin = ua.indexOf('micromessenger') != -1
       if (isWeixin) {
         // document.body.style.overflow = "hidden";
         document.body.classList.add('hidden')
-        return true;
+        return true
       } else {
         // document.body.style.overflow = "auto";
         document.body.classList.remove('hidden')
-        return false;
+        return false
       }
     }
   }
@@ -125,48 +121,73 @@ body.hidden {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  background: url(../assets/images/fs_bg.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+  .pcLogo {
+    width: 1.36rem;
+    height: 0.3rem;
+    position: absolute;
+    left: 2.4rem;
+    top: 0.8rem;
+    background: #fff;
+    background: url(../assets/images/ontfslogo.svg) no-repeat center;
+    background-size: cover;
+  }
   .iconbox {
-    width: 60px;
-    height: 60px;
-    background: url(../assets/images/iconbg.svg) no-repeat;
-    background-size: contain;
-    margin: 0 auto;
-    margin-bottom: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background: #0e0e0e;
     display: none;
+    i {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url(../assets/images/smalllogow.svg) no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   .logo_title {
-    // width: 778px;
-    height: 73px;
+    width: 100%;
+    max-width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     h1 {
-      width: 778px;
-      background: url(../assets/images/logo_bg.svg) no-repeat;
-      background-size: contain;
-      height: 73px;
+      font-family: samsungsharpsans-bold;
+      text-align: center;
+      font-size: 0.6rem;
+      font-weight: 900;
+      line-height: 0.8rem;
+      color: #fff;
     }
   }
   .sub_title {
     text-align: center;
-    // height: 25px;
-    font-size: 22px;
+    font-size: 0.22rem;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
-    line-height: 25px;
-    margin-top: 30px;
+    line-height: 0.25rem;
+    margin-top: 0.3rem;
   }
   .download_box {
-    margin-top: 50px;
-    // height: 41px;
+    margin-top: 0.6rem;
     display: flex;
     justify-content: center;
-
     .media_btn {
-      width: 159px;
-      height: 50px;
+      width: 1.32rem;
+      height: 0.42rem;
       cursor: pointer;
       transition: all 0.5s;
+      opacity: 0.9;
       img {
         display: block;
         width: 100%;
@@ -174,99 +195,63 @@ body.hidden {
       }
     }
     .media_btn.hoveraction:hover {
-      background: #fafafa;
+      opacity: 1;
     }
     .apkbtn {
       display: none;
     }
-    .qrcode_box {
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.5s;
-      &:hover {
-        background: #fafafa;
-      }
-      .s_code_img {
-        width: 100%;
-      }
-    }
-    .qrcode {
-      position: absolute;
-      left: -92%;
-      top: 130%;
-      width: 140px;
-      height: 140px;
-      background: #fff;
-      transform: translateX(4%);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 10px #dfdfdf;
-      // transition: all 1s;
-      // opacity: 0;
-      img {
-        display: block;
-        width: 120px;
-        height: 120px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
+
     .ml21 {
-      margin-left: 20px;
+      margin-left: 0.2rem;
+    }
+  }
+  .doc_link {
+    margin: 0 auto;
+    font-size: 0.14rem;
+    margin-top: 0.3rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 0.2rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.5s;
+    text-align: center;
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 }
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 768px) {
   .home {
-    transform: translateY(-20px);
+    .pcLogo {
+      display: none;
+    }
     .iconbox {
       display: block;
     }
     .logo_title {
-      height: 34px;
       h1 {
-        height: 34px;
-        width: 310px;
+        font-size: 0.5rem;
+        line-height: 0.7rem;
       }
-    }
-    .sub_title {
-      font-size: 15px;
-      margin: 0 auto;
-      margin-top: 16px;
-      width: 260px;
     }
     .download_box {
-      margin: 0 auto;
-      margin-top: 32px;
-      width: 274px;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      // flex-direction: column;
-      // align-items: center;
-      .qrcode_box {
-        display: none;
-      }
+      margin-top: 1rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       .media_btn {
-        width: 130px;
-        margin-bottom: 10px;
-        img {
-          height: auto;
-        }
+        margin-left: 0;
+        width: 2.6rem;
+        height: 0.8rem;
+        margin-bottom: 0.6rem;
       }
-      .apkbtn {
-        display: block;
-      }
-      .ml21 {
-        margin-left: 12px;
-        // margin-top: 6px;
-      }
+    }
+    .doc_link {
+      font-size: 0.3rem;
+      padding: 0 0.8rem;
+      line-height: 0.5rem;
     }
   }
 }
 </style>
-

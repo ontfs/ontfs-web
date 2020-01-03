@@ -6,7 +6,6 @@
 html,
 body,
 div,
-
 applet,
 object,
 iframe,
@@ -122,7 +121,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -159,8 +158,8 @@ body {
   width: 100%;
   /* font-family: Arial, "PingFang SC", "Microsoft Yahei",
   Helvetica Neue, Helvetica, sans-serif; */
-  font-family: 'Roboto', 'PingFang SC Bold', 'PingFang SC', 'Microsoft Yahei',
-  Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'PingFang SC Bold', 'PingFang SC', 'Microsoft Yahei',
+    Helvetica Neue, Helvetica, Arial, sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-overflow-scrolling: touch;
 }
@@ -177,7 +176,7 @@ html {
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: inline-block;
   height: 0;
   clear: both;
@@ -195,36 +194,41 @@ html {
 /* Roboto Font */
 @font-face {
   font-family: Roboto;
-  src: url("./Roboto/Roboto-Regular.woff") format("woff"),
-  url("./Roboto/Roboto-Regular.woff2") format("woff2");
+  src: url('./Roboto/Roboto-Regular.woff') format('woff'),
+    url('./Roboto/Roboto-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: auto;
 }
 @font-face {
   font-family: Roboto;
-  src: url("./Roboto/Roboto-Medium.woff") format("woff"),
-  url("./Roboto/Roboto-Medium.woff2") format("woff2");
+  src: url('./Roboto/Roboto-Medium.woff') format('woff'),
+    url('./Roboto/Roboto-Medium.woff2') format('woff2');
   font-weight: 600;
   font-display: auto;
 }
 @font-face {
   font-family: Roboto;
-  src: url("./Roboto/Roboto-Black.woff") format("woff"),
-  url("./Roboto/Roboto-Black.woff2") format("woff2");
+  src: url('./Roboto/Roboto-Black.woff') format('woff'),
+    url('./Roboto/Roboto-Black.woff2') format('woff2');
   font-weight: 900;
   font-display: auto;
 }
 /* DINPro-Medium */
-@font-face
-{
-font-family: DINPro-Medium;
+@font-face {
+  font-family: DINPro-Medium;
   src: url('./Roboto/DINPro-Medium.otf'),
-  url('./Roboto/DINPro-Medium.eot') format('eot');
-font-weight: 800;
+    url('./Roboto/DINPro-Medium.eot') format('eot');
+  font-weight: 800;
+}
+@font-face {
+  font-family: samsungsharpsans-bold;
+  src: url('./Roboto/samsungsharpsans-bold.otf');
+  font-weight: 900;
+  font-display: auto;
 }
 #app.lang_ch {
-  font-family:'PingFangSC-Regular', 'PingFang SC Bold',  'Microsoft Yahei', '黑体'
-    Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'PingFangSC-Regular', 'PingFang SC Bold', 'Microsoft Yahei',
+    '黑体' Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 #app.lang_en {
