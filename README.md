@@ -1,4 +1,4 @@
-# ontfs-download-web
+# download-ontfs-web
 
 ## Project setup
 
