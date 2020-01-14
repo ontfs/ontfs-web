@@ -5,29 +5,36 @@
     </div>
     <div class="pcLogo"></div>
     <div class="logo_title">
-      <h1>Download Ontology Filing Service Client</h1>
+      <h1>Download Ontology File Service Client</h1>
     </div>
     <div class="download_box">
       <div
         :class="isPC ? 'media_btn hoveraction' : 'media_btn'"
-        @click="openNewPage(appstoreUrl)"
+        @click="openNewPage(windowLink)"
       >
         <img src="../assets/images/windows.svg" alt />
       </div>
       <div
         :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
-        @click="openNewPage(googleplayUrl)"
+        @click="openNewPage(macLink)"
       >
         <img src="../assets/images/macicon.svg" alt />
       </div>
       <div
         :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
-        @click="openNewPage(googleplayUrl)"
+        @click="openNewPage(linuxLink)"
       >
         <img src="../assets/images/linux.svg" alt />
       </div>
     </div>
     <div class="doc_link">Click here to see API Documenation</div>
+    <div
+      class="doc_link"
+      @click="openNewPage(demoUrl)"
+      style="margin-top: 0.1rem;"
+    >
+      Visit our interactive demo showcase of ONTFS!
+    </div>
   </div>
 </template>
 
@@ -38,16 +45,15 @@ export default {
   data() {
     return {
       flag: true,
-      appstoreUrl:
-        'https://apps.apple.com/cn/app/ontology-authenticator/id1483309693',
-      googleplayUrl:
-        'https://play.google.com/store/apps/details?id=com.github.ontio.ontoauth',
-      andapkUrl: 'http://authenticator.ont.io/ontology_authenticator.apk',
+      windowLink: 'http://128.1.40.44:13000/ontfs-client-windows-amd64.exe',
+      macLink: 'http://128.1.40.44:13000/ontfs-client-darwin-amd64',
+      linuxLink: 'http://128.1.40.44:13000/ontfs-client-linux-amd64',
       weixin: {
         youshangjiao: 'Click here',
         openinexplorer: 'Open from browser'
       },
-      isWeiXinShow: false
+      isWeiXinShow: false,
+      demoUrl: 'http://demo.ontfs.io'
     }
   },
   methods: {
