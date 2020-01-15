@@ -1,59 +1,68 @@
 <template>
-  <div class="home">
-    <div class="iconbox">
-      <i></i>
-    </div>
-    <div class="pcLogo"></div>
-    <div class="logo_title">
-      <h1>Download Ontology File Service Client</h1>
-    </div>
-    <div class="download_box">
-      <div
-        :class="isPC ? 'media_btn hoveraction' : 'media_btn'"
-        @click="openNewPage(windowLink)"
-      >
-        <img src="../assets/images/windows.svg" alt />
+  <div class="home_wrap">
+    <div class="home">
+      <div class="iconbox">
+        <i></i>
       </div>
-      <div
-        :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
-        @click="openNewPage(macLink)"
-      >
-        <img src="../assets/images/macicon.svg" alt />
+      <div class="pcLogo"></div>
+      <div class="logo_title">
+        <h1>Ontology File Service Client</h1>
       </div>
-      <div
-        :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
-        @click="openNewPage(linuxLink)"
-      >
-        <img src="../assets/images/linux.svg" alt />
+      <div class="download_box">
+        <div
+          :class="isPC ? 'media_btn hoveraction' : 'media_btn'"
+          @click="openNewPage(windowLink)"
+        >
+          <img src="../assets/images/windows.svg" alt />
+        </div>
+        <div
+          :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
+          @click="openNewPage(macLink)"
+        >
+          <img src="../assets/images/macicon.svg" alt />
+        </div>
+        <div
+          :class="isPC ? 'media_btn ml21 hoveraction' : 'media_btn ml21'"
+          @click="openNewPage(linuxLink)"
+        >
+          <img src="../assets/images/linux.svg" alt />
+        </div>
       </div>
+      <!-- <div class="doc_link" @click="openNewPage(docUrl)">
+        Click here to see API Documenation
+      </div> -->
+      <div class="doc_link" @click="openNewPage(demoUrl)">
+        Visit our interactive demo showcase of ONTFS!
+      </div>
+      <div @click="turnShow('#developer_wrap')" class="down_btn hover1"></div>
     </div>
-    <div class="doc_link">Click here to see API Documenation</div>
-    <div
-      class="doc_link"
-      @click="openNewPage(demoUrl)"
-      style="margin-top: 0.1rem;"
-    >
-      Visit our interactive demo showcase of ONTFS!
-    </div>
+
+    <!--  -->
+    <Developer-div></Developer-div>
+    <Footer-div></Footer-div>
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
+import DeveloperDiv from '@/components/Developer'
+import FooterDiv from '@/components/Footer'
+
 export default {
   name: 'home',
   data() {
     return {
       flag: true,
       windowLink: 'http://128.1.40.44:13000/ontfs-client-windows-amd64.exe',
-      macLink: 'http://128.1.40.44:13000/ontfs-client-darwin-amd64',
-      linuxLink: 'http://128.1.40.44:13000/ontfs-client-linux-amd64',
+      macLink: 'http://128.1.40.44:13000/ontfs-client-darwin-amd64.zip',
+      linuxLink: 'http://128.1.40.44:13000/ontfs-client-linux-amd64.zip',
       weixin: {
         youshangjiao: 'Click here',
         openinexplorer: 'Open from browser'
       },
       isWeiXinShow: false,
-      demoUrl: 'http://demo.ontfs.io'
+      demoUrl: 'http://demo.ontfs.io',
+      docUrl: 'https://github.com/ontfs/documentation'
     }
   },
   methods: {
@@ -86,6 +95,18 @@ export default {
       } else {
         this.openNewPage(this.andapkUrl)
       }
+    },
+    turnShow(ele) {
+      $('html, body').animate(
+        {
+          scrollTop: $(ele).offset().top + 'px'
+        },
+        {
+          duration: 500,
+          easing: 'swing'
+        }
+      )
+      return false
     }
   },
   computed: {
@@ -113,7 +134,8 @@ export default {
         return false
       }
     }
-  }
+  },
+  components: { DeveloperDiv, FooterDiv }
 }
 </script>
 
@@ -162,7 +184,7 @@ body.hidden {
   }
   .logo_title {
     width: 100%;
-    max-width: 800px;
+    max-width: 820px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -225,6 +247,19 @@ body.hidden {
       color: rgba(255, 255, 255, 0.8);
     }
   }
+  .down_btn {
+    width: 0.6rem;
+    height: 0.6rem;
+    position: absolute;
+    right: 3.8rem;
+    bottom: 0.6rem;
+    background: url(../assets/images/down_btn.svg) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -257,6 +292,14 @@ body.hidden {
       font-size: 0.3rem;
       padding: 0 0.8rem;
       line-height: 0.5rem;
+    }
+    .down_btn {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 0.6rem;
     }
   }
 }
