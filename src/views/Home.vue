@@ -34,6 +34,9 @@
       <div class="doc_link" @click="openNewPage(demoUrl)">
         Visit our interactive demo showcase of ONTFS!
       </div>
+      <div class="doc_link explorer_btn" @click="openNewPage(explorerUrl)">
+        ONTFS Explorer
+      </div>
       <div @click="turnShow('#developer_wrap')" class="down_btn hover1"></div>
     </div>
 
@@ -62,7 +65,8 @@ export default {
       },
       isWeiXinShow: false,
       demoUrl: 'http://demo.ontfs.io',
-      docUrl: 'https://github.com/ontfs/documentation'
+      docUrl: 'https://github.com/ontfs/documentation',
+      explorerUrl: 'http://explorer.ontfs.io/'
     }
   },
   methods: {
@@ -261,7 +265,9 @@ body.hidden {
     }
   }
 }
-
+.explorer_btn {
+  color: #eee !important;
+}
 @media only screen and (max-width: 768px) {
   .home {
     .pcLogo {
