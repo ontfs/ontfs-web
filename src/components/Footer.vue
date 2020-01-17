@@ -5,13 +5,15 @@
       If you need ONT&ONG for TestNet, please apply here.
     </div> -->
     <div class="apply_btn hover1" @click="goApply()">Apply here</div>
-    <div class="line"><i></i></div>
-    <div class="rights">© 2018 - 2020 Ontology. All rights reserved</div>
+    <!-- <div class="line"><i></i></div>
+    <div class="rights">© 2018 - 2020 Ontology. All rights reserved</div> -->
 
     <el-dialog
       title="ONTFS Test Net Token Application"
       :visible.sync="dialogVisible"
       :before-close="handleClose"
+      :modal-append-to-body="true"
+      :append-to-body="true"
     >
       <div class="apply-wrapper">
         <div class="desc">
@@ -113,7 +115,6 @@ export default {
 <style lang="less" scoped>
 .footer_wrap {
   height: 100vh;
-  background: rgba(250, 250, 250, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,30 +122,33 @@ export default {
   position: relative;
 }
 .main_title {
-  font-family: samsungsharpsans-bold;
+  font-family: samsungsharpsans-bold, 'PingFang SC', 'Microsoft Yahei',
+    Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 0.4rem;
   text-align: center;
+  color: #fff;
 }
 .main_desc {
   margin: 0.3rem 0 0.8rem;
   font-size: 0.16rem;
   color: rgba(0, 0, 0, 0.6);
+  color: #fff;
   line-height: 0.22rem;
 }
 .apply_btn {
   margin-top: 0.8rem;
   width: 2.2rem;
   height: 0.6rem;
-  background: rgba(255, 255, 255, 1);
+  color: #fff;
   border-radius: 0.06rem;
-  border: 0.02rem solid rgba(0, 0, 0, 1);
+  border: 0.02rem solid rgba(255, 255, 255, 1);
   font-size: 0.2rem;
   text-align: center;
   line-height: 0.54rem;
   cursor: pointer;
   &:hover {
-    background: #000;
-    color: #fff;
+    background: #fff;
+    color: #000;
   }
 }
 .line {
@@ -158,7 +162,7 @@ export default {
     display: block;
     max-width: 1280px;
     height: 1px;
-    background: #f2f2f2;
+    background: #444;
     margin: 0 auto;
   }
 }
@@ -168,7 +172,7 @@ export default {
   transform: translateX(-50%);
   bottom: 0.5rem;
   font-size: 0.12rem;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 /deep/.el-dialog {
   display: flex;
@@ -247,7 +251,6 @@ export default {
 }
 .footer_wrap {
   width: 100%;
-  background: rgba(255, 255, 255, 1);
   padding: 1.2rem 0;
   color: rgba(0, 0, 0, 1);
   .cent_box {
@@ -294,249 +297,6 @@ export default {
       transition: all ease 0.5s;
     }
   }
-  .el-dialog__wrapper {
-    .el-dialog {
-      width: 11.6rem !important;
-      .el-dialog__header {
-        padding: 0.5rem 0.5rem 0.3rem;
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        background: rgba(250, 250, 250, 1);
-        .el-dialog__title {
-          font-size: 0.42rem;
-          font-family: Graphik-Semibold;
-          font-weight: 600;
-          color: rgba(0, 0, 0, 1);
-          line-height: 0.46rem;
-          text-align: left;
-        }
-        .el-dialog__headerbtn {
-          position: relative;
-          width: 0.26rem;
-          height: 0.46rem;
-          top: 0px;
-          right: 0px;
-        }
-      }
-      .el-dialog__body {
-        padding: 0px 0.5rem 0.4rem;
-        background: rgba(250, 250, 250, 1);
-        .apply-wrapper {
-          display: flex;
-          flex-flow: column;
-          text-align: left;
-          .desc {
-            font-size: 0.16rem;
-            font-family: Graphik-Regular;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 1);
-            line-height: 0.24rem;
-            padding-bottom: 0.3rem;
-          }
-          .item {
-            font-size: 0.16rem;
-            font-family: Graphik-Regular;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 1);
-            line-height: 0.24rem;
-          }
-        }
-      }
-      .el-dialog__footer {
-        padding: 0.5rem;
-        display: flex;
-        flex-flow: column;
-        text-align: left;
-        .desc {
-          font-size: 0.14rem;
-          font-weight: 400;
-          color: rgba(0, 0, 0, 1);
-          line-height: 0.16rem;
-          padding-bottom: 10px;
-        }
-        input {
-          width: 100%;
-          border-top: none;
-          border-left: none;
-          border-right: none;
-          border-bottom: 1px solid #f2f2f2;
-        }
-        .apply-btn {
-          margin-top: 0.4rem;
-          cursor: pointer;
-          font-size: 0.16rem;
-          font-family: Graphik-Semibold;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 1);
-          line-height: 0.56rem;
-          width: 185px;
-          height: 0.56rem;
-          text-align: center;
-          background-color: #000;
-          transition: all ease 0.5s;
-        }
-        .apply-btn:hover {
-          background-color: rgba(0, 0, 0, 0.6);
-          color: rgba(255, 255, 255, 1);
-          transition: all ease 0.5s;
-        }
-      }
-    }
-  }
-  /deep/ .el-dialog__wrapper {
-    /deep/ .el-dialog {
-      width: 11.6rem !important;
-      /deep/ .el-dialog__header {
-        padding: 0.5rem 0.5rem 0.3rem;
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        background: rgba(250, 250, 250, 1);
-        .el-dialog__title {
-          font-size: 42px;
-          font-family: Graphik-Semibold;
-          font-weight: 600;
-          color: rgba(0, 0, 0, 1);
-          line-height: 46px;
-          text-align: left;
-        }
-        /deep/ .el-dialog__headerbtn {
-          position: relative;
-          width: 29px;
-          height: 46px;
-          top: 0px;
-          right: 0px;
-        }
-      }
-      /deep/ .el-dialog__body {
-        padding: 0px 0.5rem 40px;
-        background: rgba(250, 250, 250, 1);
-        .apply-wrapper {
-          display: flex;
-          flex-flow: column;
-          text-align: left;
-          .desc {
-            font-size: 0.16rem;
-            font-family: Graphik-Regular;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 1);
-            line-height: 0.24rem;
-            padding-bottom: 0.3rem;
-          }
-          .item {
-            font-size: 0.16rem;
-            font-family: Graphik-Regular;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 1);
-            line-height: 0.24rem;
-          }
-        }
-      }
-      .el-dialog__body {
-        padding: 0px 0.5rem 40px;
-        background: rgba(250, 250, 250, 1);
-        .apply-wrapper {
-          display: flex;
-          flex-flow: column;
-          text-align: left;
-          .desc {
-            font-size: 0.16rem;
-            font-family: Graphik-Regular;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 1);
-            line-height: 0.24rem;
-            padding-bottom: 0.3rem;
-          }
-          .item {
-            font-size: 0.16rem;
-            font-family: Graphik-Regular;
-            font-weight: 400;
-            color: rgba(0, 0, 0, 1);
-            line-height: 0.24rem;
-          }
-        }
-      }
-      /deep/ .el-dialog__footer {
-        padding: 0.5rem;
-        display: flex;
-        flex-flow: column;
-        text-align: left;
-        .desc {
-          font-size: 0.14rem;
-          font-weight: 400;
-          color: rgba(0, 0, 0, 1);
-          line-height: 0.16rem;
-          padding-bottom: 0.1rem;
-        }
-        input {
-          width: 100%;
-          border-top: none;
-          border-left: none;
-          border-right: none;
-          border-bottom: 1px solid #f2f2f2;
-        }
-        .apply-btn {
-          margin-top: 0.4rem;
-          cursor: pointer;
-          font-size: 0.16rem;
-          font-family: Graphik-Semibold;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 1);
-          line-height: 0.56rem;
-          width: 1.85rem;
-          height: 0.56rem;
-          text-align: center;
-          background-color: #000;
-          transition: all ease 0.5s;
-        }
-        .apply-btn:hover {
-          background-color: rgba(0, 0, 0, 0.6);
-          color: rgba(255, 255, 255, 1);
-          transition: all ease 0.5s;
-        }
-      }
-      .el-dialog__footer {
-        padding: 0.5rem;
-        display: flex;
-        flex-flow: column;
-        text-align: left;
-        .desc {
-          font-size: 0.14rem;
-          font-weight: 400;
-          color: rgba(0, 0, 0, 1);
-          line-height: 0.16rem;
-          padding-bottom: 0.1rem;
-        }
-        input {
-          width: 100%;
-          border-top: none;
-          border-left: none;
-          border-right: none;
-          border-bottom: 1px solid #f2f2f2;
-        }
-        .apply-btn {
-          margin-top: 0.4rem;
-          cursor: pointer;
-          font-size: 0.16rem;
-          font-family: Graphik-Semibold;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 1);
-          line-height: 0.56rem;
-          width: 1.85rem;
-          height: 0.56rem;
-          text-align: center;
-          background-color: #000;
-          transition: all ease 0.5s;
-        }
-        .apply-btn:hover {
-          background-color: rgba(0, 0, 0, 0.6);
-          color: rgba(255, 255, 255, 1);
-          transition: all ease 0.5s;
-        }
-      }
-    }
-  }
 }
 .hidenone {
   visibility: hidden;
@@ -544,8 +304,8 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .footer_wrap {
-    height: auto;
-    padding: 3rem 0 0.6rem !important;
+    // height: auto;
+    // padding: 3rem 0 0.6rem !important;
     .main_title {
       padding: 0 1.3rem;
       font-size: 0.5rem;
@@ -560,12 +320,12 @@ export default {
     }
   }
   .apply_btn {
-    margin-bottom: 3.48rem;
+    margin-bottom: 2 rem;
     width: 3rem;
     height: 0.9rem;
-    background: rgba(255, 255, 255, 1);
+    // background: rgba(255, 255, 255, 1);
     border-radius: 0.06rem;
-    border: 0.02rem solid rgba(0, 0, 0, 1);
+    border: 0.02rem solid rgba(255, 255, 255, 1);
     line-height: 0.86rem;
     font-size: 0.3rem;
   }

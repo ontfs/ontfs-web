@@ -1,5 +1,8 @@
 <template>
-  <div class="developer_wrap" id="developer_wrap">
+  <div
+    :class="!isPC ? 'developer_wrap wechat' : 'developer_wrap'"
+    id="developer_wrap"
+  >
     <div class="dev_layout">
       <div class="main_title colorB">
         Developer Center
@@ -25,6 +28,7 @@
         </div>
       </div>
     </div>
+    <!-- <div class="down_btn hover1"></div> -->
   </div>
 </template>
 
@@ -40,6 +44,19 @@ export default {
     openNewPage(url) {
       window.open(url, '_blank')
     }
+  },
+  computed: {
+    isPC: function() {
+      if (
+        navigator.userAgent.match(
+          /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+        )
+      ) {
+        return false
+      } else {
+        return true
+      }
+    }
   }
 }
 </script>
@@ -54,12 +71,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  position: relative;
   .dev_layout {
     width: 100%;
     max-width: 1220px;
     .main_title {
-      font-family: samsungsharpsans-bold;
+      font-family: samsungsharpsans-bold, 'PingFang SC', 'Microsoft Yahei',
+        Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 0.4rem;
       text-align: center;
     }
@@ -104,16 +122,29 @@ export default {
     }
   }
 }
+.down_btn {
+  width: 0.6rem;
+  height: 0.6rem;
+  position: absolute;
+  right: 50%;
+  bottom: 0.6rem;
+  transform: translateX(50%);
+  background: url(../assets/images/shubiao.svg) no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
 @media only screen and (max-width: 768px) {
   .developer_wrap {
-    height: auto;
-    padding: 3.5rem 0.4rem 3.5rem;
+    padding: 0 0.4rem;
     .dev_layout {
       .main_title {
         font-size: 0.5rem;
       }
       .item_box {
-        margin-top: 1.4rem;
+        margin-top: 0.6rem;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
@@ -133,7 +164,7 @@ export default {
           height: 1.26rem;
         }
         .doc_btn {
-          margin-top: 1.4rem;
+          margin-top: 0.6rem;
           width: 1.4rem;
           height: 0.8rem;
         }
@@ -141,4 +172,111 @@ export default {
     }
   }
 }
+@media only screen and (max-width: 330px) {
+  .developer_wrap.wechat {
+    padding: 0 0.4rem;
+    .dev_layout {
+      .main_title {
+        font-size: 0.5rem;
+      }
+      .item_box {
+        margin-top: 0.2rem;
+      }
+      .item {
+        margin-top: 0.4rem;
+
+        .sub_title {
+          margin-top: 0.3rem;
+        }
+        .doc_btn {
+          margin-top: 0.2rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 330px) and (max-width: 380px) {
+  .developer_wrap.wechat {
+    padding: 0 0.4rem;
+    .dev_layout {
+      .main_title {
+        font-size: 0.5rem;
+      }
+      .item_box {
+        margin-top: 0.2rem;
+      }
+      .item {
+        margin-top: 0.4rem;
+
+        .sub_title {
+          margin-top: 0.3rem;
+        }
+        .doc_btn {
+          margin-top: 0.2rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 380px) and (max-width: 450px) {
+  .developer_wrap.wechat {
+    padding: 0 0.4rem;
+    .dev_layout {
+      .main_title {
+        font-size: 0.5rem;
+      }
+      .item_box {
+        margin-top: 0.2rem;
+      }
+      .item {
+        margin-top: 0.6rem;
+
+        .sub_title {
+          margin-top: 0.3rem;
+        }
+        .doc_btn {
+          margin-top: 0.4rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1680px) {
+  .developer_wrap {
+    .dev_layout {
+      .main_title {
+        margin-top: 0.2rem;
+      }
+      .item_box {
+        margin-top: 0.2rem;
+      }
+      .item {
+        margin-top: 0.6rem;
+
+        .sub_title {
+          margin-top: 0.3rem;
+        }
+        .doc_btn {
+          margin-top: 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+// @media only screen and (min-height: 750px) and (max-height: 808px) {
+//   html body #app .wechat {
+//     height: 808px !important;
+//   }
+// }
+// @media only screen and (min-height: 951px) and (max-height: 1280px) {
+//   html body #app .wechat {
+//     height: 1024px !important;
+//   }
+// }
+// @media only screen and (min-height: 1281px) {
+//   html body #app .wechat {
+//     height: 1366px !important;
+//   }
+// }
 </style>
