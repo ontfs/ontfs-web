@@ -12,8 +12,7 @@
   }
 }
 
-
-@media only screen and (max-width: 330px) {
+/* @media only screen and (max-width: 330px) {
   html body #app .wechat {
     height: 568px !important;
   }
@@ -48,4 +47,4 @@
   html body #app .wechat {
     height: 1366px !important;
   }
-}
+} */
