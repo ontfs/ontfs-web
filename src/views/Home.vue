@@ -1,5 +1,9 @@
 <template>
   <div class="home_wrap">
+    <div class="iconbox">
+      <i></i>
+    </div>
+    <div class="pcLogo"></div>
     <swiper :options="swiperOption">
       <swiper-slide class="s_item"> <MainScr-div></MainScr-div></swiper-slide>
       <swiper-slide class="s_item"
@@ -129,6 +133,36 @@ body.hidden {
     background-size: contain;
     z-index: 9;
   }
+  .pcLogo {
+    width: 1.5rem;
+    height: 0.4rem;
+    position: absolute;
+    left: 2.4rem;
+    top: 0.8rem;
+    background: #fff;
+    background: url(../assets/images/ontfslogo.svg) no-repeat center;
+    background-size: contain;
+  }
+  .iconbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background: #0e0e0e;
+    display: none;
+    i {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url(../assets/images/smalllogow.svg) no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 @media only screen and (max-width: 768px) {
   .home_wrap {
@@ -136,6 +170,12 @@ body.hidden {
       width: 0.8rem;
       height: 0.8rem;
       bottom: 0.6rem;
+    }
+    .pcLogo {
+      display: none;
+    }
+    .iconbox {
+      display: block;
     }
   }
 }
