@@ -341,259 +341,259 @@ export default {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
-  /deep/ .el-dialog {
-    width: 568px;
-  }
-  /deep/ .el-dialog__header {
-    padding: 50px 50px 30px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    background: rgba(250, 250, 250, 1);
-  }
-  /deep/ .el-dialog__title {
-    font-size: 32px;
-    font-family: Graphik-Semibold;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 1);
-    line-height: 36px;
-    text-align: left;
-  }
-  /deep/ .el-dialog__headerbtn {
-    position: relative;
-    width: 29px;
-    height: 46px;
-    top: 0px;
-    right: 0px;
-  }
-  /deep/ .el-dialog__footer {
-    padding: 50px;
-    display: flex;
-    flex-flow: column;
-    text-align: left;
-    .desc {
-      font-size: 14px;
-      font-family: Roboto-Regular;
-      font-weight: 400;
-      color: rgba(0, 0, 0, 1);
-      line-height: 16px;
-      padding-bottom: 10px;
-      text-align: left;
-    }
-  }
-  /deep/ .el-dialog__body {
-    padding: 0px 50px 40px;
-    background: rgba(250, 250, 250, 1);
-    .apply-wrapper {
-      display: flex;
-      flex-flow: column;
-      text-align: left;
-      .desc {
-        font-size: 16px;
-        font-family: Graphik-Regular;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 1);
-        line-height: 24px;
-        padding-bottom: 30px;
-      }
-      .item {
-        font-size: 16px;
-        font-family: Graphik-Regular;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 1);
-        line-height: 24px;
-      }
-    }
-  }
-  .footer_wrap {
-    .cent_box {
-      .desc_box {
-        .sub_task {
-          .sub_title {
-            height: 50px;
-          }
-          .sub_title_desc {
-            height: 144px;
-          }
-        }
-      }
-    }
-    /deep/ .el-dialog__wrapper {
-      /deep/ .el-dialog {
-        width: 768px !important;
-      }
-    }
-    .el-dialog__wrapper {
-      .el-dialog {
-        width: 768px !important;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 767px) {
-  /deep/ .el-dialog {
-    width: 90%;
-    margin: auto;
-  }
-  /deep/ .el-dialog__header {
-    padding: 50px 50px 30px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    background: rgba(250, 250, 250, 1);
-  }
-  /deep/ .el-dialog__title {
-    font-size: 32px;
-    font-family: Graphik-Semibold;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 1);
-    line-height: 36px;
-    text-align: left;
-  }
-  /deep/ .el-dialog__headerbtn {
-    position: relative;
-    width: 29px;
-    height: 46px;
-    top: 0px;
-    right: 0px;
-  }
-  /deep/ .el-dialog__footer {
-    padding: 50px;
-    display: flex;
-    flex-flow: column;
-    text-align: left;
-    .desc {
-      font-size: 14px;
-      font-family: Roboto-Regular;
-      font-weight: 400;
-      color: rgba(0, 0, 0, 1);
-      line-height: 16px;
-      padding-bottom: 10px;
-      text-align: left;
-    }
-  }
-  /deep/ .el-dialog__body {
-    padding: 0px 50px 40px;
-    background: rgba(250, 250, 250, 1);
-    .apply-wrapper {
-      display: flex;
-      flex-flow: column;
-      text-align: left;
-      .desc {
-        font-size: 16px;
-        font-family: Graphik-Regular;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 1);
-        line-height: 24px;
-        padding-bottom: 30px;
-      }
-      .item {
-        font-size: 16px;
-        font-family: Graphik-Regular;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 1);
-        line-height: 24px;
-      }
-    }
-  }
-  .footer_wrap {
-    padding: 40px 0 50px;
-    .cent_box {
-      .main_title {
-        font-size: 20px;
-      }
-      .desc_box {
-        .sub_task {
-          width: 100%;
-          border: none !important;
-          margin-bottom: 80px;
-          .top_img {
-            width: 80px;
-            height: 80px;
-            // background: #fff;
-          }
-          .sub_title {
-            font-size: 18px;
-            margin: 20px 0;
-          }
-          .sub_title_desc {
-            font-size: 12px;
-            padding: 0 20px;
-            height: 90px;
-          }
-          .to_more {
-            margin-top: 10px;
-            a {
-              font-size: 12px;
-            }
-          }
-        }
-        .sub_task:nth-of-type(3) {
-          margin-bottom: 0;
-        }
-      }
-    }
-    /deep/ .el-dialog__wrapper {
-      /deep/ .el-dialog {
-        width: 90% !important;
-        /deep/ .el-dialog__header {
-          padding: 50px 50px 30px;
-          text-align: left;
-          display: flex;
-          justify-content: space-between;
-          background: rgba(250, 250, 250, 1);
-          .el-dialog__title {
-            font-size: 32px;
-            font-family: Graphik-Semibold;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 1);
-            line-height: 36px;
-            text-align: left;
-          }
-          /deep/ .el-dialog__headerbtn {
-            position: relative;
-            width: 29px;
-            height: 46px;
-            top: 0px;
-            right: 0px;
-          }
-        }
-      }
-    }
-  }
-  .container {
-    padding: 0 20px;
-  }
-  .applyont_layout {
-    .el-dialog__wrapper {
-      .el-dialog {
-        min-width: 320px;
-        width: 90% !important;
-        .el-dialog__header {
-          padding: 50px 50px 30px;
-          text-align: left;
-          display: flex;
-          justify-content: space-between;
-          background: rgba(250, 250, 250, 1);
-          .el-dialog__title {
-            font-size: 32px;
-            font-family: Graphik-Semibold;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 1);
-            line-height: 36px;
-            text-align: left;
-          }
-          .el-dialog__headerbtn {
-            position: relative;
-            width: 29px;
-            height: 46px;
-            top: 0px;
-            right: 0px;
-          }
-        }
-      }
-    }
-  }
-}
+// @media only screen and (min-width: 768px) and (max-width: 1200px) {
+//   /deep/ .el-dialog {
+//     width: 568px;
+//   }
+//   /deep/ .el-dialog__header {
+//     padding: 50px 50px 30px;
+//     text-align: left;
+//     display: flex;
+//     justify-content: space-between;
+//     background: rgba(250, 250, 250, 1);
+//   }
+//   /deep/ .el-dialog__title {
+//     font-size: 32px;
+//     font-family: Graphik-Semibold;
+//     font-weight: 600;
+//     color: rgba(0, 0, 0, 1);
+//     line-height: 36px;
+//     text-align: left;
+//   }
+//   /deep/ .el-dialog__headerbtn {
+//     position: relative;
+//     width: 29px;
+//     height: 46px;
+//     top: 0px;
+//     right: 0px;
+//   }
+//   /deep/ .el-dialog__footer {
+//     padding: 50px;
+//     display: flex;
+//     flex-flow: column;
+//     text-align: left;
+//     .desc {
+//       font-size: 14px;
+//       font-family: Roboto-Regular;
+//       font-weight: 400;
+//       color: rgba(0, 0, 0, 1);
+//       line-height: 16px;
+//       padding-bottom: 10px;
+//       text-align: left;
+//     }
+//   }
+//   /deep/ .el-dialog__body {
+//     padding: 0px 50px 40px;
+//     background: rgba(250, 250, 250, 1);
+//     .apply-wrapper {
+//       display: flex;
+//       flex-flow: column;
+//       text-align: left;
+//       .desc {
+//         font-size: 16px;
+//         font-family: Graphik-Regular;
+//         font-weight: 400;
+//         color: rgba(0, 0, 0, 1);
+//         line-height: 24px;
+//         padding-bottom: 30px;
+//       }
+//       .item {
+//         font-size: 16px;
+//         font-family: Graphik-Regular;
+//         font-weight: 400;
+//         color: rgba(0, 0, 0, 1);
+//         line-height: 24px;
+//       }
+//     }
+//   }
+//   .footer_wrap {
+//     .cent_box {
+//       .desc_box {
+//         .sub_task {
+//           .sub_title {
+//             height: 50px;
+//           }
+//           .sub_title_desc {
+//             height: 144px;
+//           }
+//         }
+//       }
+//     }
+//     /deep/ .el-dialog__wrapper {
+//       /deep/ .el-dialog {
+//         width: 768px !important;
+//       }
+//     }
+//     .el-dialog__wrapper {
+//       .el-dialog {
+//         width: 768px !important;
+//       }
+//     }
+//   }
+// }
+// @media only screen and (max-width: 767px) {
+//   /deep/ .el-dialog {
+//     width: 90%;
+//     margin: auto;
+//   }
+//   /deep/ .el-dialog__header {
+//     padding: 50px 50px 30px;
+//     text-align: left;
+//     display: flex;
+//     justify-content: space-between;
+//     background: rgba(250, 250, 250, 1);
+//   }
+//   /deep/ .el-dialog__title {
+//     font-size: 32px;
+//     font-family: Graphik-Semibold;
+//     font-weight: 600;
+//     color: rgba(0, 0, 0, 1);
+//     line-height: 36px;
+//     text-align: left;
+//   }
+//   /deep/ .el-dialog__headerbtn {
+//     position: relative;
+//     width: 29px;
+//     height: 46px;
+//     top: 0px;
+//     right: 0px;
+//   }
+//   /deep/ .el-dialog__footer {
+//     padding: 50px;
+//     display: flex;
+//     flex-flow: column;
+//     text-align: left;
+//     .desc {
+//       font-size: 14px;
+//       font-family: Roboto-Regular;
+//       font-weight: 400;
+//       color: rgba(0, 0, 0, 1);
+//       line-height: 16px;
+//       padding-bottom: 10px;
+//       text-align: left;
+//     }
+//   }
+//   /deep/ .el-dialog__body {
+//     padding: 0px 50px 40px;
+//     background: rgba(250, 250, 250, 1);
+//     .apply-wrapper {
+//       display: flex;
+//       flex-flow: column;
+//       text-align: left;
+//       .desc {
+//         font-size: 16px;
+//         font-family: Graphik-Regular;
+//         font-weight: 400;
+//         color: rgba(0, 0, 0, 1);
+//         line-height: 24px;
+//         padding-bottom: 30px;
+//       }
+//       .item {
+//         font-size: 16px;
+//         font-family: Graphik-Regular;
+//         font-weight: 400;
+//         color: rgba(0, 0, 0, 1);
+//         line-height: 24px;
+//       }
+//     }
+//   }
+//   .footer_wrap {
+//     padding: 40px 0 50px;
+//     .cent_box {
+//       .main_title {
+//         font-size: 20px;
+//       }
+//       .desc_box {
+//         .sub_task {
+//           width: 100%;
+//           border: none !important;
+//           margin-bottom: 80px;
+//           .top_img {
+//             width: 80px;
+//             height: 80px;
+//             // background: #fff;
+//           }
+//           .sub_title {
+//             font-size: 18px;
+//             margin: 20px 0;
+//           }
+//           .sub_title_desc {
+//             font-size: 12px;
+//             padding: 0 20px;
+//             height: 90px;
+//           }
+//           .to_more {
+//             margin-top: 10px;
+//             a {
+//               font-size: 12px;
+//             }
+//           }
+//         }
+//         .sub_task:nth-of-type(3) {
+//           margin-bottom: 0;
+//         }
+//       }
+//     }
+//     /deep/ .el-dialog__wrapper {
+//       /deep/ .el-dialog {
+//         width: 90% !important;
+//         /deep/ .el-dialog__header {
+//           padding: 50px 50px 30px;
+//           text-align: left;
+//           display: flex;
+//           justify-content: space-between;
+//           background: rgba(250, 250, 250, 1);
+//           .el-dialog__title {
+//             font-size: 32px;
+//             font-family: Graphik-Semibold;
+//             font-weight: 600;
+//             color: rgba(0, 0, 0, 1);
+//             line-height: 36px;
+//             text-align: left;
+//           }
+//           /deep/ .el-dialog__headerbtn {
+//             position: relative;
+//             width: 29px;
+//             height: 46px;
+//             top: 0px;
+//             right: 0px;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .container {
+//     padding: 0 20px;
+//   }
+//   .applyont_layout {
+//     .el-dialog__wrapper {
+//       .el-dialog {
+//         min-width: 320px;
+//         width: 90% !important;
+//         .el-dialog__header {
+//           padding: 50px 50px 30px;
+//           text-align: left;
+//           display: flex;
+//           justify-content: space-between;
+//           background: rgba(250, 250, 250, 1);
+//           .el-dialog__title {
+//             font-size: 32px;
+//             font-family: Graphik-Semibold;
+//             font-weight: 600;
+//             color: rgba(0, 0, 0, 1);
+//             line-height: 36px;
+//             text-align: left;
+//           }
+//           .el-dialog__headerbtn {
+//             position: relative;
+//             width: 29px;
+//             height: 46px;
+//             top: 0px;
+//             right: 0px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 </style>
